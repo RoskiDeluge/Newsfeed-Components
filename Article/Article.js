@@ -113,3 +113,29 @@ const data = [
 
 */
 
+const articleCreator = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleP1 = document.createElement('p');
+  const articleP2 = document.createElement('p');
+  const articleP3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleP1);
+  article.appendChild(articleP2);
+  article.appendChild(articleP3);
+  article.appendChild(articleButton);
+
+  article.classList.add('article', 'article-open');
+  articleDate.classList.add('date');
+  article.P1.classList.add('articlep');
+  article.P2.classList.add('articlep');
+  article.P3.classList.add('articlep');
+  articleButton.classList.add('expandButton');
+
+  
+
+}
