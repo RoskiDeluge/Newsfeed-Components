@@ -162,7 +162,8 @@ const createArticle = (title, date, firstParagraph, secondParagraph, thirdParagr
 const parent = document.querySelector('.articles');
 
 data.forEach(item => {
-  parent.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+  const newArticle = createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  parent.appendChild(newArticle);
 })
 
 
