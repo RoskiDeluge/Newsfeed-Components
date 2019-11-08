@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Awesomeness',
+    date: 'Jan 6st, 2020',
+    firstParagraph: `lorem ipsum`,
+
+    secondParagraph: `ipsum lorem`,
+
+    thirdParagraph: `more lorem ipsum`
   }
 ];
 
@@ -112,3 +121,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const createArticle = (title, date, firstParagraph, secondParagraph, thirdParagraph) => {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleOne = document.createElement('p');
+  const articleTwo = document.createElement('p');
+  const articleThree = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleOne);
+  article.appendChild(articleTwo);
+  article.appendChild(articleThree);
+  article.appendChild(articleButton);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleOne.textContent = firstParagraph;
+  articleTwo.textContent = secondParagraph;
+  articleThree.textContent = thirdParagraph;
+  articleButton.textContent = "Read more";
+
+  //functionality
+
+  articleButton.addEventListener("click", () => {
+    article.classList.toggle('article-open');
+  })
+  
+  return article
+
+}
+
+const parent = document.querySelector('.articles');
+
+data.forEach(item => {
+  const newArticle = createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph);
+  parent.appendChild(newArticle);
+})
+
+
+
+
