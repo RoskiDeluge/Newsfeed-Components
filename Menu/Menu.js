@@ -33,3 +33,53 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const menuCreator = (arr) => {
+
+
+  const fullMenu = document.createElement('div');
+  const menuList = document.createElement('ul');
+  
+  fullMenu.appendChild(menuList);
+
+  fullMenu.classList.add('menu');
+
+  arr.forEach(item => {
+    item = document.createElement('li');
+    item.textContent = arr[0];
+    menuList.appendChild(item);
+  })
+
+  const menuOpen = document.querySelector('.menu-button');
+
+  menuOpen.addEventListener("click", () => {
+    fullMenu.classList.toggle('menu--open');
+  });
+  
+  return fullMenu;
+
+  // const fullMenu = document.createElement('div');
+  // const menuList = document.createElement('ul');
+  // const menuItem1 = document.createElement('li');
+  // const menuItem2 = document.createElement('li');
+  // const menuItem3 = document.createElement('li');
+  // const menuItem4 = document.createElement('li');
+  // const menuItem5 = document.createElement('li');
+  // const menuItem6 = document.createElement('li');
+
+  // fullMenu.appendChild(menuList);
+  // menuList.appendChild(menuItem1);
+  // menuList.appendChild(menuItem2);
+  // menuList.appendChild(menuItem3);
+  // menuList.appendChild(menuItem4);
+  // menuList.appendChild(menuItem5);
+  // menuList.appendChild(menuItem6);
+
+  // fullMenu.classList.add('menu');
+}
+
+const newMenu = menuCreator(menuItems);
+
+const parentMenu = document.querySelector('.header');
+
+parentMenu.appendChild(newMenu);
