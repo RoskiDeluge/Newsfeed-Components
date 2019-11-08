@@ -36,7 +36,6 @@ let menuItems = [
 
 const menuCreator = (arr) => {
 
-
   const fullMenu = document.createElement('div');
   const menuList = document.createElement('ul');
   
@@ -45,9 +44,9 @@ const menuCreator = (arr) => {
   fullMenu.classList.add('menu');
 
   arr.forEach(item => {
-    item = document.createElement('li');
-    item.textContent = arr[0];
-    menuList.appendChild(item);
+    let li = document.createElement('li');
+    li.textContent = item;
+    menuList.appendChild(li);
   })
 
   const menuOpen = document.querySelector('.menu-button');
